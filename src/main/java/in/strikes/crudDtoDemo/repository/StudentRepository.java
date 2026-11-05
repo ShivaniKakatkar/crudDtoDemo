@@ -1,6 +1,5 @@
 package in.strikes.crudDtoDemo.repository;
 
-import in.strikes.crudDtoDemo.dto.ResponseDto;
 import in.strikes.crudDtoDemo.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -11,4 +10,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     Optional<Student> findByIdAndDeletedIsFalse(Long id);
 
     List<Student> findByAndDeletedIsFalse();
+
+    Boolean findByEmail(String email);
+
 }
