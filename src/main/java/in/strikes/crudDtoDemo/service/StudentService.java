@@ -133,6 +133,6 @@ public class StudentService {
     }
 
     private boolean emailExists(Student student){
-        return studentRepository.findByEmail(student.getEmail());
+        return studentRepository.existsByEmail(student.getEmail());
     }
 }
