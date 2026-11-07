@@ -50,12 +50,12 @@ public class StudentController {
     }
 
     @DeleteMapping
-    public ResponseEntity<String> deleteStudent(@RequestParam Long id){
+    public ResponseEntity<String> deleteStudent(@RequestParam("id") Long id){
         studentService.deleteStudentRecord(id);
         return ResponseEntity.noContent().build();
     }
     @PatchMapping("/delete-soft")
-    public ResponseEntity<String> deleteStudentSoftly(@RequestParam Long id){
+    public ResponseEntity<String> deleteStudentSoftly(@RequestParam("id") Long id){
         studentService.deleteStudentSoftly(id);
 
         return ResponseEntity.noContent().build();
